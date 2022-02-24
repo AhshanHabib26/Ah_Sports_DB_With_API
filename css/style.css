@@ -1,0 +1,25 @@
+.banner_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error{
+    font-size: 28px;
+    color: #ff6347;
+    text-shadow: 5px 5px 5px;
+    font-weight: bold;
+    display: none;
+}
+.footer_area{
+    margin-top: 80px;
+    font-size: 18px;
+    color: #363636;
+}
+.footer_area a{
+    text-decoration: none;
+    color: #4791ff;
+}
+.footer_area a:hover{
+    color: #ff6347;
+}
