@@ -3,11 +3,10 @@ const  inputBtn = () =>{
     const inputValue = inputInner.value
  
     if( inputValue == ""){
-      const errorMsg = document.getElementById('erro_msg')
-      errorMsg.style.display = 'block'
-      
+      errorMsg('block')
     }
     else{
+       errorMsg('none')
        const url = `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${inputValue}`
        fetch(url)
        .then( res => res.json())
@@ -19,6 +18,7 @@ const  inputBtn = () =>{
  const displayInfo = (data) =>{
     console.log(data)
     const containerDiv = document.getElementById('container_div')
+    containerDiv.innerHTML = ""
     data.forEach( datas => {
        const div = document.createElement('div')
        div.classList.add('col')
@@ -44,4 +44,9 @@ const  inputBtn = () =>{
     })
  
  
+ }
+
+ function errorMsg(style){
+    const errorMsg = document.getElementById('erro_msg')
+      errorMsg.style.display = style
  }
