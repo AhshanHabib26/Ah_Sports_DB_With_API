@@ -3,6 +3,12 @@
     align-items: center;
     justify-content: center;
 }
+.spinner_container{
+    display: none;
+}
+.search_result{
+    display: none;
+}
 
 .error{
     font-size: 28px;
