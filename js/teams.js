@@ -2,11 +2,11 @@ const  inputBtn = () =>{
     const inputInner = document.getElementById('input_inner')
     const inputValue = inputInner.value
     if( inputValue == ""){
-      const errorMsg = document.getElementById('erro_msg')
-      errorMsg.style.display = 'block'
+      errorMsg('block')
       
     }
     else{
+       errorMsg('none')
        const url = `https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=${inputValue}`
        fetch(url)
        .then( res => res.json())
@@ -17,6 +17,7 @@ const  inputBtn = () =>{
  
  const displayInfo = (teams) =>{
     const containerDiv = document.getElementById('container_div')
+    containerDiv.innerHTML = ""
     teams.forEach( team => {
        const div = document.createElement('div')
        div.classList.add('col')
@@ -43,3 +44,9 @@ const  inputBtn = () =>{
  
  
  }
+
+
+function errorMsg(style){
+   const errorMsg = document.getElementById('erro_msg')
+     errorMsg.style.display = style
+}
